@@ -5,7 +5,7 @@ MAINTAINER Swind Ou <swind@cloudmosa.com>
 # Install Git and dependencies
 RUN dpkg --add-architecture i386 \
  && apt-get update -y\
- && apt-get install -y file git curl zip libncurses5:i386 libstdc++6:i386 zlib1g:i386 default-jdk\
+ && apt-get install -y file git curl wget zip libncurses5:i386 libstdc++6:i386 zlib1g:i386 default-jdk\
  && apt-get clean \
  && rm -rf /var/lib/apt/lists /var/cache/apt
 
