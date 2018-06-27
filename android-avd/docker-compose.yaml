@@ -1,0 +1,13 @@
+version: '2'
+services:
+  emulator:
+    image: swind/ubuntu-android-avd:latest
+    environment:
+     - ANDROID_AVD_EXTRA_ARGS=--device 8 --force
+     - ANDROID_EMULATOR_EXTRA_ARGS=-skin 1080x1920 -memory 2048 -no-boot-anim -qemu -vnc :0
+     - noVNC=true
+    ports:
+     - 3000:3000
+     - 6080:6080
+    devices:
+      - "/dev/kvm:/dev/kvm"
